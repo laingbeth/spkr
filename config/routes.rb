@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'speakers#index'
+
+  root 'welcomes#index'
 get "logout" => "sessions#destroy", :as => "logout"
 get "login" => "sessions#new", :as => "login"
 get "signup" => "users#new", :as => "signup"
