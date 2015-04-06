@@ -22,9 +22,11 @@
         <td><%= speaker.contact %></td>
         <td><%= speaker.topic %></td>
         <td><%= speaker.description %></td>
+        <td><%= speaker.avatar %></td>
+
         <td><%= link_to 'Show', speaker %></td>
-        <td><%= link_to 'Edit', edit_speaker_path(speaker) %></td>
-        <td><%= link_to 'Destroy', speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       <!--  <td><%= link_to 'Edit', edit_speaker_path(speaker) %></td>
+        <td><%= link_to 'Destroy', speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>

@@ -7,6 +7,7 @@ ruby  '2.1.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem "paperclip", "~> 4.2"
+gem 'modernizr-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.4'
