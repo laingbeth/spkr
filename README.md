@@ -17,3 +17,6 @@ less-rails
 mail 
 will_paginate, '~> 3.0' 
 rails_12factor
+
+App is deployed on Heroku:  https://sleepy-cove-8238.herokuapp.com/
+
