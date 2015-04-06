@@ -9,6 +9,7 @@ gem 'pg'
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk', '~> 1.5.7'
 gem 'modernizr-rails'
+gem 'strong_parameters', '~> 0.2.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.4'
