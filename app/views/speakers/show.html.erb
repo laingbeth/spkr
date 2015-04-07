@@ -1,32 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="jumbotron">
+  <%- model_class = Speaker -%>
+  <div class="page-header">
+    <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @speaker.name %>
-</p>
+  <dl class="dl-horizontal">
+    <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+    <dd><%= @speaker.name %></dd>
+    <br>
+    <dt><strong><%= model_class.human_attribute_name(:headline) %>:</strong></dt>
+    <dd><%= @speaker.headline %></dd>
+    <br>
+    <dt><strong><%= model_class.human_attribute_name(:topic) %>:</strong></dt>
+    <dd><%= @speaker.topic %></dd>
+    <br>
+    <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+    <dd><%= @speaker.description %></dd>
+    <br>
+   <dt><strong><%= model_class.human_attribute_name(:contact) %>:</strong></dt>
+    <dd><%= link_to @speaker.contact %></dd>
+  </dl>
 
-<p>
-  <strong>Headline:</strong>
-  <%= @speaker.headline %>
-</p>
+  <dt><strong><%= image_tag @speaker.avatar.url(:large) %>:</strong></dt>
 
-<p>
-  <strong>Contact:</strong>
-  <%= @speaker.contact %>
-</p>
 
-<p>
-  <strong>Topic:</strong>
-  <%= @speaker.topic %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @speaker.description %>
-</p>
-
-<p> 
-<%= image_tag @speaker.avatar.url(:medium) %>
-</p>
-
-<%= link_to 'Back', speakers_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              speakers_path, :class => 'btn btn-default'  %>
+  </div>
+</div>

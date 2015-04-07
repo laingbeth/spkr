@@ -1,41 +1,88 @@
-<%= form_for (@speaker), :url => speakers_path, :html => { :multipart => true } do |f| %>
-  <% if @speaker.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@speaker.errors.count, "error") %> prohibited this speaker from being saved:</h2>
+<div class="container">
 
-    <!--   <ul>
-      <% @speaker.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul> -->
+<%= form_for @speaker, :html => { :multipart => true, :class => "form-horizontal speaker" } do |f| %>
+
+    <% if @speaker.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@speaker.errors.count, "error") %> prohibited this speaker from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @speaker.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@speaker[:name]) %>
   </div>
-  <div class="field">
-    <%= f.label :headline %><br>
-    <%= f.text_field :headline %>
+  <div class="control-group">
+    <%= f.label :headline, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :headline, :class => 'form-control' %>
+    </div>
+    <%= error_span(@speaker[:headline]) %>
   </div>
-  <div class="field">
-    <%= f.label :contact %><br>
-    <%= f.text_field :contact %>
+  <div class="control-group">
+    <%= f.label :contact, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :contact, :class => 'form-control' %>
+    </div>
+    <%= error_span(@speaker[:contact]) %>
   </div>
-  <div class="field">
-    <%= f.label :topic %><br>
-    <%= f.text_field :topic %>
+  <div class="control-group">
+    <%= f.label :topic, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :topic, :class => 'form-control' %>
+    </div>
+    <%= error_span(@speaker[:topic]) %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div>
+    <%= error_span(@speaker[:description]) %>
   </div>
-  <div class="field">
-  <%= f.label :photo %><br>  
   <%= f.file_field :avatar %>
+
+  div class="control-group">
+    <%= f.label :avatar, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :avatar, :class => 'form-control' %>
+    </div>
+    <%= error_span(@speaker[:avatar_file_name]) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+   <div class="control-group">
+    <%= f.label :avatar_file_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :avatar_file_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@speaker[:avatar_file_name]) %>
+  </div> 
+  <div class="control-group">
+    <%= f.label :avatar_content_type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :avatar_content_type, :class => 'form-control' %>
+    </div>
+    <%= error_span(@speaker[:avatar_content_type]) %>
   </div>
+    <%= error_span(@speaker[:avatar_updated_at]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            speakers_path, :class => 'btn btn-default' %>
+
 <% end %>
+</div>

@@ -1,13 +1,12 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-ruby  '2.1.2'
+ruby '2.1.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
-gem "paperclip", "~> 4.2"
-gem "mini_magick"
+gem 'paperclip', '~> 4.2'
+gem 'mini_magick'
 gem 'aws-sdk', '~> 1.5.7'
 gem 'modernizr-rails'
 # gem 'strong_parameters', '~> 0.2.3'
@@ -15,13 +14,16 @@ gem 'modernizr-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'twitter-bootstrap-rails'
-gem 'font-awesome-sass', '~> 4.3.0'
+gem 'twitter-bootswatch-rails', '~> 3.3'
+gem 'bootstrap_form'
+gem 'twitter-bootswatch-rails-fontawesome', '~> 4.3'
+gem 'twitter-bootswatch-rails-helpers'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -48,10 +50,9 @@ group :development, :test do
   gem 'better_errors'
   gem 'rubocop'
 
-gem 'less-rails'
-gem "therubyracer"
-gem "mail"
-gem 'will_paginate', '~> 3.0'
+  gem 'less-rails'
+  gem 'mail'
+  gem 'will_paginate', '~> 3.0'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
@@ -60,4 +61,3 @@ gem 'will_paginate', '~> 3.0'
 
   gem 'rails_12factor', group: :production
 end
-

@@ -1,38 +1,36 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Speakers</h1>
-
-<table>
+<div class="container">
+<%- model_class = Speaker -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Headline</th>
-      <th>Contact</th>
-      <th>Topic</th>
-      <th>Description</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:headline) %></th>
+ 
     </tr>
   </thead>
-
   <tbody>
     <% @speakers.each do |speaker| %>
       <tr>
+        <td><%= link_to speaker.id, speaker_path(speaker) %></td>
         <td><%= speaker.name %></td>
         <td><%= speaker.headline %></td>
-        <td><%= speaker.contact %></td>
         <td><%= speaker.topic %></td>
         <td><%= speaker.description %></td>
+        <td><%= speaker.avatar %></td>
 
-          
-
-        <td><%= link_to 'Show', speaker %></td>
-       <!--  <td><%= link_to 'Edit', edit_speaker_path(speaker) %></td>
-        <td><%= link_to 'Destroy', speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <td>
+          <%= link_to 'Show', speaker, :class => 'btn btn-default btn-xs' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Speaker', new_speaker_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_speaker_path,
+            :class => 'btn btn-primary' %>
+</div>
