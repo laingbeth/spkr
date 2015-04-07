@@ -9,6 +9,8 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:headline) %></th>
+      <th><%= model_class.human_attribute_name(:topics) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
  
     </tr>
   </thead>
@@ -20,7 +22,6 @@
         <td><%= speaker.headline %></td>
         <td><%= speaker.topic %></td>
         <td><%= speaker.description %></td>
-        <td><%= speaker.avatar %></td>
 
         <td>
           <%= link_to 'Show', speaker, :class => 'btn btn-default btn-xs' %>

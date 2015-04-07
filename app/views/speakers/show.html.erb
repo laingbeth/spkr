@@ -4,7 +4,8 @@
   <div class="page-header">
     <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
   </div>
-
+ <dt><strong><%= image_tag @speaker.avatar.url(:large) %></strong></dt>
+<br>
   <dl class="dl-horizontal">
     <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
     <dd><%= @speaker.name %></dd>
@@ -21,9 +22,6 @@
    <dt><strong><%= model_class.human_attribute_name(:contact) %>:</strong></dt>
     <dd><%= link_to @speaker.contact %></dd>
   </dl>
-
-  <dt><strong><%= image_tag @speaker.avatar.url(:large) %>:</strong></dt>
-
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               speakers_path, :class => 'btn btn-default'  %>
