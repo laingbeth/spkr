@@ -20,3 +20,8 @@ rails_12factor
 
 App is deployed on Heroku:  https://sleepy-cove-8238.herokuapp.com/
 
+Trello board:  https://trello.com/b/YF0YoZDq/speaker-board
+
+
+
+
