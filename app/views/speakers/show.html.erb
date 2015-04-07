@@ -25,5 +25,8 @@
   <%= @speaker.description %>
 </p>
 
+<p> 
+<%= image_tag @speaker.avatar.url(:medium) %>
+</p>
 
 <%= link_to 'Back', speakers_path %>
