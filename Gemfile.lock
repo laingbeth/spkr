@@ -250,6 +250,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   less-rails
+  libv8 (~> 3.16.14.7)
   mail
   mini_magick
   modernizr-rails
